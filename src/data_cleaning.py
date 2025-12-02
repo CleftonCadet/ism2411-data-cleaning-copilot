@@ -10,6 +10,7 @@ def load_data(file_path: str):
 # Clean data 
 
 # 1. Standardizes column names (lowercase, no spaces) for consistency
+
 def clean_column_names(df):
     df = df.copy()
     df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_')
@@ -17,6 +18,7 @@ def clean_column_names(df):
 
 
 # 2. Removes leading/trailing whitespace from product and category names to ensure data consistency.
+
 def strip_text_columns(df, columns):
     df = df.copy()
     for col in columns:
@@ -25,6 +27,7 @@ def strip_text_columns(df, columns):
 
 
 # 3. Handles missing prices and quantities to avoid calculation errors for analysis.
+
 def handle_missing_values(df):
     df = df.copy()
 
@@ -40,6 +43,7 @@ def handle_missing_values(df):
 
 
 # 4. Removes rows with negative prices or quantities since they are invalid for analysis.
+
 def remove_invalid_rows(df):
     df = df.copy()
 
